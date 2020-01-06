@@ -50,5 +50,5 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
   -  mkdir build; cd build/; cmake ../; make
-  - ./helloworld
-  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/helloworld;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - ./helloworld.deb
+  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
