@@ -28,8 +28,8 @@ script:
 # from here https://docs.travis-ci.com/user/deployment/bintray#Encrypt-your-API-key
 deploy:
   provider: bintray
-  file: "/Otus-cpp1/helloworld/"
+  file: "helloworld.deb"
   user: "alex-kalugin-cpp"
-  key: "Wrong key"
+  key: "$BINTRAY_API_KEY"
 #  passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
   skip_cleanup: true # to upload artifacts created during the build
