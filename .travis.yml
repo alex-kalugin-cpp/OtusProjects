@@ -26,4 +26,4 @@ deploy:
   provider: bintray
   file: "/Otus-cpp1/helloworld.deb"
   user: "alex-kalugin-cpp"
-  key: "$BINTRAY_API_KEY"
+  key: "8b34f7c7faa6c17f15c11c81cf6977cbeceee656"
