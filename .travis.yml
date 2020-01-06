@@ -13,10 +13,12 @@ install:
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 
 script: 
-  - g++ main.cpp -std=c++11 -o helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
+ # - g++ main.cpp -std=c++11 -o helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
+ - g++ main.cpp -std=c++11 -o helloworld.deb
  # - ./helloworld
   deploy:
     provider: script
     skip_cleanup: true
     script:
-    - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+#    - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
