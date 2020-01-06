@@ -11,8 +11,8 @@ language: cpp
   # C++11
 #  - sudo apt-get install -qq g++-5
 #  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
- before_script:
- - sudo apt-get update -qq
+ #before_script:
+ #- sudo apt-get update -qq
   script:
   - cmake .
   - cmake --build .
