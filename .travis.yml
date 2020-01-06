@@ -24,6 +24,6 @@ script:
 #  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 deploy:
   provider: bintray
-  file: "/Otus-cpp1/helloworld/helloworld.deb"
+  file: "/Otus-cpp1/helloworld/"
   user: "alex-kalugin-cpp"
   key: "8b34f7c7faa6c17f15c11c81cf6977cbeceee656"
