@@ -51,4 +51,4 @@ script:
   # Run your build commands next
   -  mkdir build; cd build/; cmake ../; make
   - ./helloworld.deb
-  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/$TRAVIS_BUILD_NUMBER/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
