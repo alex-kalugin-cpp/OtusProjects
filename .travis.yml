@@ -1,4 +1,4 @@
-language: cpp
+#language: cpp
 #compiler: gcc
 #dist: trusty
 
@@ -33,3 +33,21 @@ language: cpp
 #  file: "/Otus-cpp1/helloworld/"
 #  user: "alex-kalugin-cpp"
 #  key: "8b34f7c7faa6c17f15c11c81cf6977cbeceee656"
+dist: trusty
+sudo: required
+language:
+  - cpp
+compiler:
+  - gcc
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - cmake
+script:
+  # Check versions of gcc, g++ and cmake
+  - gcc -v && g++ -v && cmake --version
+  # Run your build commands next
+  -  mkdir build; cd build/; cmake ../; make
+  - ./helloworld
