@@ -16,7 +16,7 @@ script:
   # Run your build commands next
   -  mkdir build; cd build/; cmake ../; make
   - ./helloworld.deb
-  - echo "TEST"
+  - echo $TRAVIS_BUILD_NUMBER
 # deploy:
 #   provider: script
 #    skip_cleanup: true
