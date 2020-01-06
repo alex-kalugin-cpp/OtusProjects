@@ -16,10 +16,20 @@ script:
   # Run your build commands next
   -  mkdir build; cd build/; cmake ../; make
   - ./helloworld.deb
-  - echo $TRAVIS_BUILD_NUMBER
-  - echo $BINTRAY_API_KEY
+#  - echo $TRAVIS_BUILD_NUMBER
+#  - echo $BINTRAY_API_KEY
+# from source
 # deploy:
 #   provider: script
 #    skip_cleanup: true
 #   script:
 #  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/$TRAVIS_BUILD_NUMBER/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+
+# from here https://docs.travis-ci.com/user/deployment/bintray#Encrypt-your-API-key
+deploy:
+  provider: bintray
+  file: "/Otus-cpp1/helloworld/"
+  user: "alex-kalugin-cpp"
+  key: "$BINTRAY_API_KEY"
+#  passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
+  skip_cleanup: true # to upload artifacts created during the build
