@@ -30,6 +30,6 @@ deploy:
   provider: bintray
   file: "/Otus-cpp1/helloworld/"
   user: "alex-kalugin-cpp"
-  key: "$BINTRAY_API_KEY"
+  key: "Wrong key"
 #  passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
   skip_cleanup: true # to upload artifacts created during the build
