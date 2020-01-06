@@ -8,7 +8,7 @@ before_install:
   - sudo apt-get update -qq
 
 install: 
-  # C++11
+  # C++11 123
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 
