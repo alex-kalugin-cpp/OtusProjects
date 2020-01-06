@@ -16,7 +16,7 @@ install:
   - cmake --build .
 #  - cmake --build . --target test
   - cmake --build . --target package
-script: 
+#script:
 #  - g++ main.cpp -std=c++11 -o helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
 # - g++ main.cpp -std=c++11 -o helloworld.deb
  - ./helloworld
