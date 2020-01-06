@@ -18,6 +18,7 @@ script:
   - ./helloworld.deb
 #  - echo $TRAVIS_BUILD_NUMBER
 #  - echo $BINTRAY_API_KEY
+# 1
 # from source
 # deploy:
 #   provider: script
@@ -25,11 +26,27 @@ script:
 #   script:
 #  - curl -T helloworld.deb -alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/$TRAVIS_BUILD_NUMBER/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 
+# 2
 # from here https://docs.travis-ci.com/user/deployment/bintray#Encrypt-your-API-key
-deploy:
-  provider: bintray
-  file: "helloworld.deb"
-  user: "alex-kalugin-cpp"
-  key: "$BINTRAY_API_KEY"
+#deploy:
+#  provider: bintray
+#  file: "helloworld.deb"
+#  user: "alex-kalugin-cpp"
+#  key: "$BINTRAY_API_KEY"
 #  passphrase: "Optional. In case a passphrase is configured on Bintray and GPG signing is used"
-  skip_cleanup: true # to upload artifacts created during the build
+#  skip_cleanup: true # to upload artifacts created during the build
+
+# 3
+# from here https://github.com/appveyor/website/blob/master/src/docs/deployment/bintray.md
+deploy:
+- provider: BinTray
+  username: alex-kalugin-cpp
+  api_key:
+    secure: $BINTRAY_API_KEY
+  subject: alex-kalugin-cpp
+  repo: Otus-cpp1
+  package: helloworld
+  version: $TRAVIS_BUILD_NUMBER
+  publish: true
+  override: true
+  explode: true
