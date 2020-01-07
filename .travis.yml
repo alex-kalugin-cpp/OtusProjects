@@ -20,7 +20,7 @@ script:
 #  - echo $BINTRAY_API_KEY
 # 1
 # from source
- deploy:
+# deploy:
 #   provider: script
 #   skip_cleanup: true
 #   script:
