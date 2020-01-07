@@ -20,12 +20,12 @@ script:
 #  - echo $BINTRAY_API_KEY
 # 1
 # from source
-# deploy:
-#   provider: script
-#   skip_cleanup: true
-#   script:
-#   - echo $BINTRAY_API_KEY
-#   - curl -T helloworld.deb -u alex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/$TRAVIS_BUILD_NUMBER/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+deploy:
+   provider: script
+   skip_cleanup: true
+   script:
+   - echo $BINTRAY_API_KEY
+   - curl -T helloworld.deb -ualex-kalugin-cpp:$BINTRAY_API_KEY "https://api.bintray.com/content/alex-kalugin-cpp/Otus-cpp1/helloworld/$TRAVIS_BUILD_NUMBER/helloworld.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 #   deploy:
 #     provider: script
 #    skip_cleanup: true
@@ -33,7 +33,7 @@ script:
 #     - curl -T helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -ustarokurov:$BINTRAY_API_KEY "https://api.bintray.com/content/starokurov/otus-cpp/helloworld/$TRAVIS_BUILD_NUMBER/helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
 # 2
 # from here https://docs.travis-ci.com/user/deployment/bintray#Encrypt-your-API-key
-deploy:
+#deploy:
 #  provider: bintray
 #  file: "helloworld.deb"
 #  user: "alex-kalugin-cpp"
