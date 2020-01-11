@@ -17,10 +17,10 @@ script:
   - cmake --build .
 #  - cmake --build . --target test
   - cmake --build . --target package
-  - ls
+  #- ls
   # Run your build commands next
 #  -  mkdir build; cd build/; cmake ../; make
-#  -  mv helloworld.deb helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
+  -  mv helloworld-..-Linux.deb helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
 #- ./helloworld
 #  - ./helloworld-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb
 #  - echo $TRAVIS_BUILD_NUMBER
