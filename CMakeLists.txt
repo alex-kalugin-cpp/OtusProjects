@@ -1,8 +1,8 @@
 #easy HelloWorld cmake
 cmake_minimum_required(VERSION 2.8)
 
-project(helloworld)
-
+#project(helloworld)
+project(helloworld VERSION 0.0.1)
 add_executable(helloworld main.cpp)
 set(CPACK_GENERATOR DEB)
 
